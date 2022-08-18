@@ -6,7 +6,14 @@ public class Funcionario {
 	private double salario;
 	
 	public double getBonificacao() {
-		return this.salario*0.1;	}
+		if(this.salario>=1000) {
+			return this.salario*0.1;
+		}else if(salario <1000) {
+			return this.salario *0.05;
+		}
+		return getBonificacao();
+		
+			}
 	
 	
 	public String getNome() {
