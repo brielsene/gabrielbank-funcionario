@@ -16,6 +16,8 @@ public abstract class Funcionario {
 			}
 	
 	
+	
+	
 	public String getNome() {
 		return nome;
 	}

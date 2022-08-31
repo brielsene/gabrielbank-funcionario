@@ -1,5 +1,5 @@
 
-public class Gerente extends Funcionario {
+public class Gerente extends FuncionarioAutenticavel {
 	private String senha;
 	
 	
@@ -13,6 +13,14 @@ public class Gerente extends Funcionario {
 	
 	public double getBonificacao() {
 		return super.getSalario() + super.getBonificacao();
+	}
+	
+	public boolean autentica (String senha) {
+		if (this.senha == senha) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }
