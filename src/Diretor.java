@@ -1,6 +1,8 @@
 
-public class Diretor extends Funcionario {
+public class Diretor extends Funcionario implements Autenticavel {
 	private  int segundofator;
+	
+	private int senha;
 	
 	public int getSegundofator() {
 		return segundofator;
@@ -11,7 +13,23 @@ public class Diretor extends Funcionario {
 	}
 	
 	public double getBonificacao() {
-		return super.getSalario()+ super.getBonificacao()+1000;
+		return super.getSalario()+ (super.getSalario()*0.25);
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.senha = senha;
+		
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 
 }

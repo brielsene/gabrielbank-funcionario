@@ -1,26 +1,35 @@
 
-public class Gerente extends FuncionarioAutenticavel {
-	private String senha;
+public class Gerente extends Funcionario implements Autenticavel {
+	private int senha;
 	
 	
-	public String getSenha() {
+	public int getSenha() {
 		return senha;
 	}
 	
-	public void setSenha(String senha) {
+	public void setSenha(int senha) {
 		this.senha = senha;
+		
 	}
 	
-	public double getBonificacao() {
-		return super.getSalario() + super.getBonificacao();
-	}
 	
-	public boolean autentica (String senha) {
+	public boolean autentica (int senha) {
 		if (this.senha == senha) {
 			return true;
 		}else {
 			return false;
 		}
 	}
+
+	@Override
+	public double getBonificacao() {
+		// TODO Auto-generated method stub
+		return super.getSalario()+(super.getSalario()*0.10);
+	}
+
+	
+
+
+
 
 }

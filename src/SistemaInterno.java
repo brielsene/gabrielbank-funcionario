@@ -1,13 +1,13 @@
 
 public class SistemaInterno extends Funcionario {
 	
-	private int senha = 11;
+	private int senha ;
 	
 	public void setSenha(int senha) {
 		this.senha = senha;
 	}
 	
-	public void autentica (FuncionarioAutenticavel fa) {
+	public void autentica (Autenticavel fa) {
 		boolean autenticou = fa.autentica(this.senha);
 		if(autenticou) {
 			System.out.println("Login com sucesso");
@@ -16,6 +16,12 @@ public class SistemaInterno extends Funcionario {
 		}
 		
 		
+	}
+
+	@Override
+	public double getBonificacao() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

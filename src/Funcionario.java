@@ -5,15 +5,7 @@ public abstract class Funcionario {
 	private String dt_nascimento;
 	private double salario;
 	
-	public double getBonificacao() {
-		if(this.salario>=1000) {
-			return this.salario*0.1;
-		}else if(salario <1000) {
-			return this.salario *0.05;
-		}
-		return getBonificacao();
-		
-			}
+	public  abstract  double  getBonificacao();
 	
 	
 	
