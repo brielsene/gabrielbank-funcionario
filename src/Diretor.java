@@ -1,6 +1,11 @@
 
 public class Diretor extends Funcionario implements Autenticavel {
 	private  int segundofator;
+	private AutenticacaoUtil autenticador;
+	
+	public Diretor() {
+		this.autenticador = new AutenticacaoUtil();
+	}
 	
 	private int senha;
 	
@@ -18,17 +23,13 @@ public class Diretor extends Funcionario implements Autenticavel {
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.autenticador.autentica(senha);
 		
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		if(this.senha == senha) {
-			return true;
-		}else {
-			return false;
-		}
+		return this.autenticador.autentica(senha);
 		
 	}
 
